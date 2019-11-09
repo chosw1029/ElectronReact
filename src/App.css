@@ -6,6 +6,13 @@
   height: 40vmin;
 }
 
+.Header {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  height: 24px; 
+  background-color: darkviolet;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
