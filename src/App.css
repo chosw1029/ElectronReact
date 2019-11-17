@@ -27,3 +27,9 @@
 .App-link {
   color: #09d3ac;
 }
+
+
+.flex_container {
+  display: flex;
+  flex-direction:  column;
+}

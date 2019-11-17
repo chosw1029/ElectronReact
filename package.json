@@ -5,11 +5,16 @@
   "author": "ReStartAllKill",
   "description": "Building and Publishing a React Based Electron App From Scratch",
   "dependencies": {
+    "@material-ui/core": "^4.6.0",
+    "@material-ui/icons": "^4.5.1",
+    "axios": "^0.19.0",
+    "date-fns": "^2.7.0",
     "electron-window-state": "^5.0.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-tabs": "^3.0.0"
   },
   "main": "public/electron-starter.js",
   "homepage": "./",
@@ -23,7 +28,7 @@
     "dev": "nf start -p 3000",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "package": "electron-builder build --mac --c.extraMetadata.main=build/electron-starter.js",
+    "package": "electron-builder build --mac --win --c.extraMetadata.main=build/electron-starter.js",
     "postinstall": "electron-builder install-app-deps"
   },
   "build": {
@@ -31,6 +36,9 @@
     "mac": {
       "category": "com.nextus",
       "target": "dmg"
+    },
+    "win": {
+      "target": "NSIS"
     },
     "files": [
       "build/**/*",
@@ -57,6 +65,7 @@
   },
   "devDependencies": {
     "electron": "^7.1.1",
+    "electron-builder": "^21.2.0",
     "foreman": "^3.0.1"
   }
 }

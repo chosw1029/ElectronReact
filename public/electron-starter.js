@@ -14,19 +14,23 @@ let mainWindow;
 
 function createWindow() {
     // Load the previous state with fallback to defaults
-  let mainWindowState = windowStateKeeper({
-    defaultWidth: 1000,
-    defaultHeight: 800
-  });
+    let mainWindowState = windowStateKeeper({
+        defaultWidth: 600,
+        defaultHeight: 400
+    });
 
     // Create the browser window.
-    mainWindow = new BrowserWindow({'x': mainWindowState.x,
-    'y': mainWindowState.y,
-    'width': mainWindowState.width,
-    'height': mainWindowState.height,
-     frame: false,  resizable: true, webPreferences: {
-        nodeIntegration: true
-       }});
+    mainWindow = new BrowserWindow({
+        'x': mainWindowState.x,
+        'y': mainWindowState.y,
+        'width': 1024,
+        'height': 600,
+        frame: false,  
+        resizable: true, 
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
 
     // and load the index.html of the app.
     const startUrl = process.env.ELECTRON_START_URL || url.format({
